@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Markan</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+    <section id="order" class="order-section">
+        <div class="container">
+            <h2>Place Your Order</h2>
+            <form id="order-form" class="needs-validation" novalidate>
+                <!-- Delivery Option -->
+                <div class="form-group">
+                    <label for="delivery-option">Choose Delivery Option:</label>
+                    <select id="delivery-option" class="form-control" required>
+                        <option value="">Select an option</option>
+                        <option value="delivery">Delivery</option>
+                        <option value="restaurant">Restaurant Pickup</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a delivery option.</div>
+                </div>
+
+                <!-- Delivery Details (Conditional) -->
+                <div id="delivery-details" class="form-group" style="display: none;">
+                    <div class="row">
+                        <div class="col">
+                            <label for="dorm-number">Dorm Number:</label>
+                            <input type="text" id="dorm-number" class="form-control" required />
+                            <div class="invalid-feedback">Please enter your dorm number.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="form-group">
+                    <label for="payment-method">Choose Payment Method:</label>
+                    <select id="payment-method" class="form-control" required>
+                        <option value="">Select a payment method</option>
+                        <option value="cbe">CBE Bank</option>
+                        <option value="tele-birr">Tele Birr</option>
+                        <option value="abyssinia">Abyssinia Bank</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a payment method.</div>
+                </div>
+
+                <!-- Account Number (Conditional) -->
+                <div id="account-number-group" class="form-group" style="display: none;">
+                    <label for="account-number">Account Number:</label>
+                    <input type="text" id="account-number" class="form-control" required />
+                    <div class="invalid-feedback">Please enter your account number.</div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" class="form-control" required />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Submit Order</button>
+            </form>
+
+            <!-- Output Section -->
+            <div id="output-section" class="output-section" style="display: none;">
+                <h3>Order Details</h3>
+                <p><strong>Dorm Number:</strong> <span id="output-dorm-number"></span></p>
+                <p><strong>Account Number:</strong> <span id="output-account-number"></span></p>
+                <p><strong>Email:</strong> <span id="output-email"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom JS -->
+    <script src="order.js"></script>
+</body>
+</html>
